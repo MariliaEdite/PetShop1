@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
+// Classe principal responsável por cadastrar um animal e associar um serviço a ele
 public class PetShopCadastro {
     public static void main(String[] args) {
         Locale.setDefault(new Locale("en", "US"));
+        // Criação de um objeto Scanner para capturar entradas do usuário
         Scanner scanner = new Scanner(System.in);
 
         // Cadastro do animal
+        // Declaração de variáveis para armazenar informações do animal
         String nome;
         String telefone;
         String endereco;
@@ -20,7 +23,7 @@ public class PetShopCadastro {
         double peso;
         int idade_animal;
 
-        
+        // Coleta de dados do animal
         System.out.print("Digite o nome do animal: ");
         nome = scanner.next();
         // animal.setNome(scanner.next());
@@ -44,7 +47,7 @@ public class PetShopCadastro {
 
         System.out.print("Digite a Idade do Animal: ");
         idade_animal = scanner.nextInt();
-
+// A data de cadastro do animal é a data atual
         LocalDate dataCadastro = LocalDate.now();
 
         // animal.setIdade(scanner.nextInt());
@@ -61,7 +64,8 @@ public class PetShopCadastro {
         escolhaServico = scanner.nextInt();
         scanner.nextLine();  // Consumir a linha extra do buffer
 
-        String tipoServico;
+        String tipoServico;// Variável para armazenar o tipo de serviço
+        // Dependendo da escolha do usuário, o tipo de serviço será atribuído
         // Servico servico = new Servico();
         switch (escolhaServico) {
             case 1:
@@ -77,7 +81,7 @@ public class PetShopCadastro {
         }
 
         LocalDate dataServico = LocalDate.now();
-
+// Criação de um objeto 'Servico' com base no tipo de serviço escolhido e os dados do cadastro
         Servico servico = new Servico(tipoServico, dataServico, 1, dataCadastro, nome, telefone, endereco);
 
         // Removido o pedido de descrição do serviço
@@ -94,7 +98,7 @@ public class PetShopCadastro {
         // Imprimir os cadastros
         System.out.println("\nCadastro do Animal:");
         animal.imprimirCadastro();
-
+// Fecha o scanner após a execução do programa
         scanner.close();
     }
 }
