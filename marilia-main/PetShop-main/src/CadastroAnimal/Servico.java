@@ -2,11 +2,13 @@ package CadastroAnimal;
 
 import java.time.LocalDate;
 
+// A classe 'Servico' herda de 'Cadastro', representando um serviço realizado para um animal ou cadastro
 public class Servico extends Cadastro {
     private String tipoServico;
     private LocalDate dataServico;
 
-
+// Construtor da classe 'Servico'. Ele recebe os parâmetros específicos de 'Servico'
+    // e também os parâmetros de 'Cadastro', que são passados para o construtor da superclasse 'Cadastro'
 	public Servico(String tipoServico, LocalDate dataServico, int id, LocalDate dataCadastro, String nome, String telefone, String endereco) {
 		super(id, dataCadastro, nome, telefone, endereco);
 		this.tipoServico = tipoServico;
