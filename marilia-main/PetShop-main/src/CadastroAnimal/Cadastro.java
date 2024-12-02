@@ -3,14 +3,16 @@ package CadastroAnimal;
 import java.time.LocalDate;
 
 //Classe MÃE
+// Classe abstrata que serve como classe base (mãe) para outras classes como 'Animal' e 'Servico'
 public abstract class Cadastro {
+	// Atributos da classe Cadastro
     private int id;
     private LocalDate dataCadastro;
     private String nome;
     private String telefone;
     private String endereco;
 
-
+// Construtor da classe Cadastro, inicializa os atributos com os valores fornecidos
 	public Cadastro(int id, LocalDate dataCadastro, String nome, String telefone, String endereco) {
 		this.id = id;
 		this.dataCadastro = dataCadastro;
