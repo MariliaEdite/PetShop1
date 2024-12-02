@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+// A classe 'Animal' herda da classe 'Cadastro', representando um animal cadastrado.
 public class Animal extends Cadastro{
     private String tipo;
     private String raca;
@@ -13,25 +14,26 @@ public class Animal extends Cadastro{
 	private final List<Servico> servicos; // Lista de serviços realizados no animal cadastrado.
     
 
-
+	// Construtor da classe Animal, inicializando todos os atributos do animal, incluindo a lista de serviços
 	public Animal(int id, LocalDate dataCadastro, String nome, String telefone, String endereco, String tipo, String raca, double altura, double peso, int idade, List<Servico> servicos) {
 		super(id, dataCadastro, nome, telefone, endereco);
+		//ATRIBUIÇÕES
 		this.tipo = tipo;
 		this.raca = raca;
 		this.altura = altura;
 		this.peso = peso;
 		this.idade = idade;
-		this.servicos = new ArrayList<>();
+		this.servicos = new ArrayList<>(); // Inicializa a lista de serviços, um ArrayList
 	}
 	
 	//GETTERS E SETTERS
 
 	public String getTipo() {
-		return this.tipo;
+		return this.tipo; //Define
 	}
 
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		this.tipo = tipo; //Retorna
 	}
 
 	public String getRaca() {
@@ -76,6 +78,7 @@ public class Animal extends Cadastro{
 
     @Override
     public void imprimirCadastro(){
+ 	// Imprime as informações básicas do animal
         System.out.println("Nome: " + getNome());
         System.out.println("Telefone: " + getTelefone());
         System.out.println("Endereço: " + getEndereco());
@@ -83,6 +86,7 @@ public class Animal extends Cadastro{
         System.out.println("Raça: " + getRaca());
         System.out.println("Idade: " + getIdade() + " anos");
         System.out.println("Serviços realizados:");
+	// Percorre a lista de serviços e imprime cada um
         for (Servico servico : servicos) {
             servico.imprimirCadastro();
         }
